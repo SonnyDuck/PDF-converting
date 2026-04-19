@@ -5,7 +5,6 @@ from datetime import datetime
 from io import BytesIO
 
 from src.pdf_parser import extract_pdf_tables
-from src.charts import create_chart
 from src.export_utils import export_buttons
 from src.report_generator import generate_pdf_report
 from src.locales import t

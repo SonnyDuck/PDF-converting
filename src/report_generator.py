@@ -162,31 +162,3 @@ def generate_pdf_report(df, lang="EN", metadata=None):
     # IMPORTANT: Use dest='S' for older fpdf or just output() for fpdf2
     # To be safest, let's return it as a byte string explicitly
     return pdf.output(dest='S')
-
-    
-    def embed_chart(img_key, title):
-        if img_key in insights:
-            if pdf.get_y() > 220:
-                pdf.add_page()
-            else:
-                pdf.ln(5)
-            pdf.set_font("Roboto", "B", 10)
-            pdf.multi_cell(w_page, 8, title)
-            with tempfile.NamedTemporaryFile(delete=False, suffix='.png') as tmp:
-                tmp.write(insights[img_key])
-                tmp_path = tmp.name
-            # Slightly scale the image down so 2 can easily fit on a page
-            pdf.image(tmp_path, w=150)
-            os.unlink(tmp_path)
-
-    embed_chart('img_stack', "[Biểu đồ 1] Phân phối Tỷ trọng khoảng điểm" if lang=="VI" else "[Chart 1] Score Distribution")
-    embed_chart('img_grouped', "[Biểu đồ 2] Phân loại Học lực sinh viên" if lang=="VI" else "[Chart 2] Student Grade Classification")
-    embed_chart('img_box', "[Biểu đồ 3] Boxplot Phân tán & Lệch chuẩn" if lang=="VI" else "[Chart 3] Variance & Range Boxplot")
-    embed_chart('img_scatter', "[Biểu đồ 4] Scatter - Correlation Điểm Thành Phần" if lang=="VI" else "[Chart 4] Component Correlation Scatter")
-    
-    pdf.ln(10)
-    pdf.set_font("Roboto", "", 9)
-    t_4 = "Báo cáo tự động xuất tuyến tính toàn bộ các mảng biểu diễn không gian từ tương tác trên Dashboard." if lang=="VI" else "This is an internal comprehensive auto-generated visual report."
-    pdf.multi_cell(w_page, 6, t_4)
-    
-    return pdf.output(dest='S')
