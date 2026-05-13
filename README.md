@@ -61,23 +61,30 @@ streamlit run app.py
 3. **Phân tích**: Sử dụng các tab để xem biểu đồ và insights.
 4. **Xuất báo cáo**: Tải xuống báo cáo PDF hoặc dữ liệu CSV/XLSX.
 
+## Demo Trực Tuyến & Dữ Liệu Mẫu
+
+Bạn có thể trải nghiệm trực tiếp ứng dụng đã được deploy tại đường link sau:
+🌐 **[https://pdf-converting.streamlit.app/](https://pdf-converting.streamlit.app/)**
+
+Để dùng thử ứng dụng, bạn có thể tải các file PDF mẫu trong thư mục `sample/` của repository này và upload lên ứng dụng.
+
 ## Cấu trúc dự án
 
-```
+```text
 pdf-converting/
 ├── app.py                 # File chính của ứng dụng
 ├── style.css              # CSS tùy chỉnh giao diện
 ├── requirements.txt       # Dependencies Python
 ├── .streamlit/
 │   └── config.toml        # Cấu hình Streamlit
+├── sample/                # Thư mục chứa các file PDF mẫu để test
 └── src/
     ├── __init__.py
     ├── pdf_parser.py      # Logic trích xuất PDF
-    ├── charts.py          # Tạo biểu đồ
     ├── export_utils.py    # Xuất dữ liệu
     ├── report_generator.py # Tạo báo cáo PDF
     ├── locales.py         # Đa ngôn ngữ
-    └── Roboto-Bold.ttf    # Font cho PDF
+    ├── Roboto-Bold.ttf    # Font cho PDF
     └── Roboto-Regular.ttf
 ```
 
