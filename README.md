@@ -2,6 +2,18 @@
 
 Một ứng dụng web phân tích dữ liệu bảng điểm từ PDF một cách tự động, với biểu đồ tương tác và báo cáo chuyên nghiệp.
 
+## Giao diện ứng dụng
+
+### Trang chủ (Landing Page)
+![Landing Page](assets/landing_page.png)
+
+### Xem trước dữ liệu (Preview Data)
+![Preview Data](assets/preview_data.png)
+
+### Bảng điều khiển phân tích (Dashboard)
+![Dashboard 1](assets/dashboard_1.png)
+![Dashboard 2](assets/dashboard_2.png)
+
 ## Tính năng chính
 
 - **📄 Trích xuất dữ liệu PDF**: Tự động đọc và phân tích bảng điểm từ file PDF.
